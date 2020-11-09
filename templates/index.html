@@ -1,15 +1,21 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
+        <meta name="description"
+            content="Hi I'm Kumar Shanu!
+              I love coding, doing research and collaborating. I can learn just about anything by having a final product to tear apart piece by piece. I break the code where I need to figure out why things work the way they do. Documentation is just a reference.">
+        <meta name="keywords" content="its-kumar, its-kumar, kumar, kumar shanu, dscrecbijnor, developer">
+        <meta name="author" content="Kumar Shanu">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kumar Shanu | Developer</title>
-        <link rel="icon" href="./images/Kumar.jpg" type="image/jpg">
+        <link rel="icon" href="{%static '/images/Kumar.jpg'%}" type="image/jpg">
         <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link rel="stylesheet" type="text/css" href="{%static 'styles/default.css' %}">
         <link id="theme-style" rel="stylesheet" type="text/css" href="">
     </head>
 
@@ -36,7 +42,7 @@
                     </div>
 
                     <div class="left-column">
-                        <img src="images/Kumar.jpg" alt="Ks" id="profile_pic">
+                        <img src="{%static 'images/Kumar.jpg'%}" alt="Ks" id="profile_pic">
                         <h5 style="text-align: center; line-height:0;">Personalize Theme</h5>
                         <div id="theme-option-wrapper">
                             <div data-mode="light" class="theme-dot" id="light-mode"></div>
@@ -73,19 +79,23 @@
                         <h4>More about Me</h4>
                         <p>I can learn just about anything by having a final product to tear apart piece by piece. </p>
                         <p>I break the code where I need to
-                        figure out why things work the way they do. Documentation is just a reference.</p>
+                            figure out why things work the way they do. Documentation is just a reference.</p>
                         <hr />
 
                         <h4>TOP EXPERTIES </h4>
-                        <p> Django Web developer at REC Bijnor:<a href="https://drive.google.com/file/d/14reIv32MjM2uiDhijtgSLUQos0YTFSIh/view?usp=sharing" target="_blank">Download Resume </a></p>
+                        <p> Django Web developer at REC Bijnor:<a
+                                href="https://drive.google.com/file/d/14reIv32MjM2uiDhijtgSLUQos0YTFSIh/view?usp=sharing"
+                                target="_blank">Download Resume </a></p>
 
-                        <p>Recently I have developed a web project for DSC(Developer Student Club), A official Technical Club running in Rajkiya
-                        Enineering College, Bijnor. My team helped me in building the project.</p>
+                        <p>Recently I have developed a web project for DSC(Developer Student Club), A official Technical
+                            Club running in Rajkiya
+                            Enineering College, Bijnor. My team helped me in building the project.</p>
 
                         <h4>Projects:</h4>
-                        <p>1. Set up a static website in S3, use cloudfront distribution, show page load times, and set up restrictions.
-                        2. Set up a highly available website in the network at AWS
-                        3. Set up a highly available relational database service (RDS) at AWS</p>
+                        <p>1. Set up a static website in S3, use cloudfront distribution, show page load times, and set
+                            up restrictions.
+                            2. Set up a highly available website in the network at AWS
+                            3. Set up a highly available relational database service (RDS) at AWS</p>
 
                         <div id="skills">
                             <ul>
@@ -108,11 +118,12 @@
                     </div>
 
                     <div class="social-link">
-                        <img id="social-img" src="images/github_profile.png">
+                        <img id="social-img" src="{%static 'images/github_profile.png' %}">
                         <h3>Find me on Linkedin & Github</h3>
                         <p><a href="" target="_blank">Linkedin: @Kumar</a></p>
                         <p><a href="https://github.com/its-Kumar/" target="_blank">Github: @its-Kumar</a></p>
-                        <p><a href="https://www.instagram.com/its_yours_kumar/" target="_blank">Instagram: @its_yours_kumar</a></p>
+                        <p><a href="https://www.instagram.com/its_yours_kumar/" target="_blank">Instagram:
+                                @its_yours_kumar</a></p>
                     </div>
                 </div>
             </div>
@@ -125,7 +136,7 @@
                 <div class="post-wrapper">
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/Kumar.jpg">
+                            <img class="thumbnail" src="{%static 'images/Kumar.jpg'%}">
                             <div class="post-preview">
                                 <h3>Post Title</h3>
                                 <p class="post-intro">This is a text.</p>
@@ -136,7 +147,7 @@
 
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/Kumar.jpg">
+                            <img class="thumbnail" src="{%static 'images/Kumar.jpg'%}">
                             <div class="post-preview">
                                 <h3>Post Title</h3>
                                 <p class="post-intro">This is a text.</p>
@@ -147,7 +158,7 @@
 
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/Kumar.jpg">
+                            <img class="thumbnail" src="{%static 'images/Kumar.jpg'%}">
                             <div class="post-preview">
                                 <h3>Post Title</h3>
                                 <p class="post-intro">This is a text.</p>
@@ -162,7 +173,8 @@
         <section class="s2">
             <div class="main-container" id="contact">
                 <h3 style="text-align: center;">Get in touch</h3>
-                <form action="" id="contact-form">
+                <form action="" method="POST" id="contact-form">
+                    {%csrf_token%}
                     <label>Name</label>
                     <input type="text" class="input-field" name="name">
                     <label>Subject</label>
@@ -172,10 +184,17 @@
                     <label>Message</label>
                     <textarea class="input-field" name="message"></textarea>
                     <input type="submit" id="submit-btn" value="send">
+                    {%if messages %}
+                    <ul class="messages">
+                        {%for message in messages %}
+                        <li {%if message.tags %} class="{{message.tags}}" {%endif%}>{{message}}</li>
+                        {%endfor%}
+                    </ul>
+                    {%endif%}
                 </form>
             </div>
         </section>
-        <script type="text/javascript" src="scripts/script.js"></script>
+        <script type="text/javascript" src="{%static 'scripts/script.js'%}"></script>
     </body>
 
 </html>

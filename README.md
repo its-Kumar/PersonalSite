@@ -9,18 +9,18 @@ Personal website with customized themes using HTML, CSS and Javascript.
 
 ### Blue
 
-![blue](./blue.png)
+![blue](static/blue.png)
 
 
 ### Green
 
-![green](./green.png)
+![green](static/green.png)
 
 
 
 ### Purple
 
-![purple](./purple.png)
+![purple](static/purple.png)
 
 ---
 
