@@ -176,11 +176,11 @@
                 <form action="" method="POST" id="contact-form">
                     {%csrf_token%}
                     <label>Name</label>
-                    <input type="text" class="input-field" name="name">
+                    <input type="text" class="input-field" name="name" required>
                     <label>Subject</label>
-                    <input type="text" class="input-field" name="subject">
+                    <input type="text" class="input-field" name="subject" required>
                     <label>Email</label>
-                    <input type="text" class="input-field" name="email">
+                    <input type="text" class="input-field" name="email" required>
                     <label>Message</label>
                     <textarea class="input-field" name="message"></textarea>
                     <input type="submit" id="submit-btn" value="send">
