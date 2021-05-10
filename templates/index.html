@@ -180,9 +180,9 @@
                     <label>Subject</label>
                     <input type="text" class="input-field" name="subject" required>
                     <label>Email</label>
-                    <input type="text" class="input-field" name="email" required>
+                    <input type="email" class="input-field" name="email" required>
                     <label>Message</label>
-                    <textarea class="input-field" name="message"></textarea>
+                    <textarea class="input-field" name="message" placeholder="Enter your message ..." required></textarea>
                     <input type="submit" id="submit-btn" value="send">
                     {%if messages %}
                     <ul class="messages">
